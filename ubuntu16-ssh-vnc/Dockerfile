@@ -1,4 +1,4 @@
-FROM sdm.sliic.lenovo.com:5000/ubuntu16-ssh
+FROM bluecatr/ubuntu16-ssh
 MAINTAINER huyd
 
 RUN sed -i 's#http://archive.ubuntu.com/#http://mirrors.aliyun.com/#' /etc/apt/sources.list \
