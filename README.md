@@ -1,2 +1,2 @@
 # Dockerfile
-Some Dockerfile files for middelware
+Dockerfile files for some known middleware
