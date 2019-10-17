@@ -1,4 +1,4 @@
-FROM sdm.sliic.lenovo.com:5000/mosquitto
+FROM bluecatr/mosquitto
 
 ARG MOSQUITTO_AUTH_VERSION
 ARG MOSQUITTO_AUTH_BACKEND_CDB
