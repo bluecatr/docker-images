@@ -1,7 +1,7 @@
 FROM bluecatr/centos7-systemd-ssh:7
 MAINTAINER huyd
 
-RUN yum install -y gnome-classic-session gnome-terminal nautilus-open-terminal control-center liberation-mono-fonts tigervnc-server \
+RUN yum install -y gnome-classic-session gnome-terminal nautilus-open-terminal control-center liberation-mono-fonts tigervnc-server firefox \
     && yum clean all && rm -rf /var/cache/yum/* \
     && unlink /etc/systemd/system/default.target \
     && ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target \
