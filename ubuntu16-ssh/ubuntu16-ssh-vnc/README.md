@@ -7,4 +7,9 @@ Enable sshd root:passw0rd@
 
 docker run -d -p 22001:22 -p 59001:5901 bluecatr/ubuntu16-ssh-vnc
 
-第一次启动需要ssh登录进去，启动vncserver并设置初始密码
+First time, you need run vncpasswd to set password for VNC server, and then start VNC service
+
+```
+echo -e '<yourpassword>\n<yourpassword>'|vncpasswd
+systemctl start vncserver
+```
