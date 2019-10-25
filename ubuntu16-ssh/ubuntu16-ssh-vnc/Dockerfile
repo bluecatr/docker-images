@@ -17,11 +17,11 @@ ADD ./setvncpw.sh /root/
 
 #not sure why this command don't work well
 #echo -e 'passw0rd\npassw0rd'|vncpasswd
-    
+
 RUN chmod 755 /root/.vnc/xstartup \
-    && systemctl enable vncserver \
     && sh /root/setvncpw.sh \
-    && rm -f /root/setvncpw.sh
+    && rm -f /root/setvncpw.sh \
+    && systemctl enable vncserver
 
 
 EXPOSE 5901
