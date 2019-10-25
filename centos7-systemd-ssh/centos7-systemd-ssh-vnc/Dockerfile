@@ -10,3 +10,5 @@ RUN yum install -y gnome-classic-session gnome-terminal nautilus-open-terminal c
     && sed -ri 's/^PIDFile=.*/PIDFile=\/root\/.vnc\/%H%i.pid/g' /etc/systemd/system/vncserver@:1.service \
     && echo -e "passw0rd\npassw0rd" | vncpasswd \
     && systemctl enable vncserver@:1
+
+EXPOSE 5901

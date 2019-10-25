@@ -11,3 +11,5 @@ RUN sed -i 's#http://archive.ubuntu.com/#http://mirrors.aliyun.com/#' /etc/apt/s
     && echo "AddressFamily inet" >> /etc/ssh/sshd_config
 
 ADD ./xstartup /root/.vnc/xstartup
+
+EXPOSE 5901
