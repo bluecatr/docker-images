@@ -7,7 +7,7 @@ RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docke
     && yum clean all && rm -rf /var/cache/yum/* \
     && systemctl enable docker
 
-#yum install docker-ce-18.09.9 docker-ce-cli-18.09.9 containerd.io
+#yum install -y docker-ce-18.09.9 docker-ce-cli-18.09.9 containerd.io
 #yum install -y docker-ce docker-ce-cli containerd.io
 
 #ADD docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
