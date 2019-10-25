@@ -11,7 +11,8 @@ RUN mkdir -p /usr/X11R6/lib/X11 \
     && echo "X11UseLocalhost no" >> /etc/ssh/sshd_config \
     && echo "AddressFamily inet" >> /etc/ssh/sshd_config
 
-#echo -e 'passw0rd\npassw0rd\n'|vncpasswd
+#not sure why this command don't work well
+#echo -e 'passw0rd\npassw0rd'|vncpasswd
 
 ADD ./vncserver.service /etc/systemd/system/vncserver.service
 ADD ./passwd /root/.vnc/passwd
