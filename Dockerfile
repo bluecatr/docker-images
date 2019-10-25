@@ -9,7 +9,7 @@ RUN sed -i 's#http://archive.ubuntu.com/#http://mirrors.aliyun.com/#' /etc/apt/s
     && ln -s /usr/share/fonts/X11 /usr/X11R6/lib/X11/fonts \
     && echo "X11UseLocalhost no" >> /etc/ssh/sshd_config \
     && echo "AddressFamily inet" >> /etc/ssh/sshd_config \
-    && echo -e "passw0rd\npassw0rd" | vncpasswd
+    && echo -e 'passw0rd\npassw0rd\n'|vncpasswd
 
 ADD ./vncserver.service /etc/systemd/system/vncserver.service
 ADD ./xstartup /root/.vnc/xstartup
