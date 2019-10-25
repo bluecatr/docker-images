@@ -3,7 +3,7 @@ Docker image: [centos7-systemd-ssh](https://hub.docker.com/r/bluecatr/centos7-sy
 
 Enable systemctl and sshd root:passw0rd@
 
-docker run --privileged -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro bluecatr/centos7-systemd-ssh
+docker run --privileged -d -p 22:22 -v /sys/fs/cgroup:/sys/fs/cgroup:ro bluecatr/centos7-systemd-ssh
 
 ## VIM 中文支持
 修改/etc/vimrc文件，在该文件尾上添加下面四行代码：
