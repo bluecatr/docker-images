@@ -15,4 +15,4 @@ RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config 
     && update-rc.d ssh enable
 
 EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/sbin/init"]

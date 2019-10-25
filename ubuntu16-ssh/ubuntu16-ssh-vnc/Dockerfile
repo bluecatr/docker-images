@@ -8,7 +8,8 @@ RUN sed -i 's#http://archive.ubuntu.com/#http://mirrors.aliyun.com/#' /etc/apt/s
     && mkdir -p /usr/X11R6/lib/X11 \
     && ln -s /usr/share/fonts/X11 /usr/X11R6/lib/X11/fonts \
     && echo "X11UseLocalhost no" >> /etc/ssh/sshd_config \
-    && echo "AddressFamily inet" >> /etc/ssh/sshd_config
+    && echo "AddressFamily inet" >> /etc/ssh/sshd_config \
+    && echo -e "passw0rd\npassw0rd" | vncpasswd \
 
 ADD ./xstartup /root/.vnc/xstartup
 
