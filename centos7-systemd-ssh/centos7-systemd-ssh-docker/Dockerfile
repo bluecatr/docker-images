@@ -1,9 +1,8 @@
 FROM bluecatr/centos7-systemd-ssh:7
 MAINTAINER huyd
 
-ENV container docker
 RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
-    && yum install -y docker-ce-18.09.9 docker-ce-cli-18.09.9 containerd.io \
+    && yum install -y docker-ce docker-ce-cli containerd.io \
     && yum clean all && rm -rf /var/cache/yum/* \
     && systemctl enable docker
 
