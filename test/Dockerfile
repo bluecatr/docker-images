@@ -14,7 +14,7 @@ RUN apk add --no-cache --virtual=build-dependencies wget tar build-base util-lin
             PREFIX=/usr \
             WITH_SRV=no \
             WITH_WEBSOCKETS=yes \
-            WITH_DOCS=no \
+            WITH_DOCS=no
 RUN addgroup mosquitto \
     && adduser -S -H -s /sbin/nologin -D -g mosquitto mosquitto \
     && cp $MOSQUITTO_TEMP_DIR/client/mosquitto_pub /usr/bin/mosquitto_pub \
