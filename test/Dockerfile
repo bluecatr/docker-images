@@ -2,12 +2,12 @@ FROM alpine:3.13
 
 ARG MOSQUITTO_VERSION
 ENV MOSQUITTO_VERSION=${MOSQUITTO_VERSION:-1.6.13} \
-    MOSQUITTO_CONF_DIR=/etc/mosquitto
+    MOSQUITTO_CONF_DIR=/etc/mosquitto \
+    MOSQUITTO_TEMP_DIR=/tmp/mosquitto
 
 # COMPILE MOSQUITTO
 RUN apk add --no-cache --virtual=build-dependencies wget tar build-base util-linux-dev c-ares-dev libwebsockets-dev openssl-dev \
     && apk add --no-cache bash libwebsockets openssl libuuid \
-    && MOSQUITTO_TEMP_DIR=/tmp/mosquitto \
     && mkdir -p $MOSQUITTO_TEMP_DIR \
     && wget -O - http://mosquitto.org/files/source/mosquitto-${MOSQUITTO_VERSION}.tar.gz | tar xzf - -C $MOSQUITTO_TEMP_DIR --strip-components=1 \
     && make -C $MOSQUITTO_TEMP_DIR \
