@@ -10,11 +10,7 @@ RUN apk add --no-cache --virtual=build-dependencies wget tar build-base util-lin
     && apk add --no-cache bash libwebsockets openssl libuuid \
     && mkdir -p $MOSQUITTO_TEMP_DIR \
     && wget -O - http://mosquitto.org/files/source/mosquitto-${MOSQUITTO_VERSION}.tar.gz | tar xzf - -C $MOSQUITTO_TEMP_DIR --strip-components=1 \
-    && make -C $MOSQUITTO_TEMP_DIR \
-            PREFIX=/usr \
-            WITH_SRV=no \
-            WITH_WEBSOCKETS=yes \
-            WITH_DOCS=no
+    && make -C $MOSQUITTO_TEMP_DIR PREFIX=/usr WITH_SRV=no WITH_WEBSOCKETS=yes WITH_DOCS=no
 RUN addgroup mosquitto \
     && adduser -S -H -s /sbin/nologin -D -g mosquitto mosquitto \
     && cp $MOSQUITTO_TEMP_DIR/client/mosquitto_pub /usr/bin/mosquitto_pub \
